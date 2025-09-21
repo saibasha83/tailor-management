@@ -11,7 +11,7 @@ const EarningsPage = () => {
   if (!userId) return;
 
   axios
-    .get(`http://localhost:5000/api/earnings?userId=${userId}`)
+    .get(`https://tailor-management-3.onrender.com/api/earnings?userId=${userId}`)
     .then((res) => setEarnings(res.data))
     .catch((err) => console.error(err));
 }, []);
