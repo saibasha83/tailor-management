@@ -1,0 +1,54 @@
+/* src/pages/EarningsPage.css */
+
+.earnings-container {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 20px;
+  background: #ffffff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.earnings-title {
+  text-align: center;
+  color: #333;
+  margin-bottom: 20px;
+  font-size: 28px;
+  font-weight: 600;
+}
+
+.no-data {
+  text-align: center;
+  color: #777;
+  font-size: 16px;
+}
+
+.table-wrapper {
+  overflow-x: auto;
+}
+
+.earnings-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.earnings-table th,
+.earnings-table td {
+  padding: 12px 20px;
+  text-align: center;
+}
+
+.earnings-table thead {
+  background-color: #4caf50;
+  color: white;
+}
+
+.earnings-table tbody tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.earnings-table tbody tr:hover {
+  background-color: #e0f7fa;
+  transition: 0.3s;
+}
