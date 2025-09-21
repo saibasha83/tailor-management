@@ -35,6 +35,6 @@ app.use("/api/earnings", earningsRoute);
 // Start server
 app.listen(port, () => {
   console.log(`🚀 Server running on port ${port}`);
-  console.log(`🌐 Accessible at https://tailor-management-2.onrender.com`);
+  console.log(`🌐 Accessible at https://tailor-management-3.onrender.com`);
 });
   
