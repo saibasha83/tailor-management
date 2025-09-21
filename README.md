@@ -37,7 +37,8 @@ cp .env.example .env   # Add your own MongoDB URI & Twilio keys
 npm start
 
 3. **frontend setup**
-cd ../frontend
+cd src
+cd frontend
 npm install
 npm start
 
