@@ -22,7 +22,7 @@ const MyOrders = () => {
 
   const fetchGarments = async (userId) => {
     try {
-      const res = await axios.get(`http://localhost:5000/api/garments/user/${userId}`);
+      const res = await axios.get(`https://tailor-management-3.onrender.com/api/garments/user/${userId}`);
       setGarments(res.data);
     } catch (error) {
       console.error("Error fetching garments:", error);
@@ -48,7 +48,7 @@ const MyOrders = () => {
   const handleDelete = async (id) => {
     if (!window.confirm("Are you sure you want to delete this garment?")) return;
     try {
-      await axios.delete(`http://localhost:5000/api/garments/${id}`);
+      await axios.delete(`https://tailor-management-3.onrender.com/api/garments/${id}`);
       setGarments((prev) => prev.filter((g) => g._id !== id));
     } catch (error) {
       console.error("Error deleting garment:", error);
@@ -69,12 +69,12 @@ const MyOrders = () => {
     try {
       if (editStatus === "Completed") {
         // Call special status route → sends SMS
-        await axios.put(`http://localhost:5000/api/garments/${id}/status`, {
+        await axios.put(`https://tailor-management-3.onrender.com/api/garments/${id}/status`, {
           status: "Completed",
         });
       } else {
         // Normal update
-        await axios.put(`http://localhost:5000/api/garments/${id}`, {
+        await axios.put(`https://tailor-management-3.onrender.com/api/garments/${id}`, {
           measurements: editMeasurements,
           submitDate: editSubmitDate,
           status: editStatus,
