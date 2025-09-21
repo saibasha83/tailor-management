@@ -21,7 +21,7 @@ const Home = () => {
     const userId = localStorage.getItem("userId");
     if (userId) {
       // fetch username from backend
-      axios.get(`http://localhost:5000/api/users/${userId}`)
+      axios.get(`https://tailor-management-3.onrender.com/api/users/${userId}`)
         .then(res => setUsername(res.data.username))
         .catch(err => console.error("Error fetching user:", err));
     }
