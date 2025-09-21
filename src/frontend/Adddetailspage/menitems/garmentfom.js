@@ -41,7 +41,7 @@ const GarmentForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("http://localhost:5000/api/garments", {
+      await axios.post("https://tailor-management-3.onrender.com/api/garments", {
         garmentType,
         measurements,
         submitDate,
