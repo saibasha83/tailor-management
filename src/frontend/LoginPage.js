@@ -13,7 +13,7 @@ const Loginpage = () => {
     try {
       if (isSignup) {
         // ✅ Signup API
-        await axios.post("http://localhost:5000/api/users/signup", {
+        await axios.post("https://tailor-management-3.onrender.com/api/users/signup", {
           username,
           password,
         });
@@ -21,7 +21,7 @@ const Loginpage = () => {
         setIsSignup(false);
       } else {
         // ✅ Login API
-        const res = await axios.post("http://localhost:5000/api/users/login", {
+        const res = await axios.post("https://tailor-management-3.onrender.com/api/users/login", {
           username,
           password,
         });
