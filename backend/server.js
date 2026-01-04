@@ -35,6 +35,11 @@ app.use("/api/earnings", earningsRoute);
 // Start server
 app.listen(port, () => {
   console.log(`🚀 Server running on port ${port}`);
+<<<<<<< HEAD
   console.log(`🌐 Accessible at https://tailor-management-3.onrender.com`);
+=======
+ console.log("JWT_SECRET:", process.env.JWT_SECRET);
+
+>>>>>>> 748c428 (Implement JWT authentication and protect frontend/backend routes)
 });
   

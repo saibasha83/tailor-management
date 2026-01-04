@@ -11,20 +11,40 @@ const Home = () => {
   const toggleDropdown = () => setShowDropdown(!showDropdown);
 
   const logout = () => {
-    localStorage.removeItem("userId"); // clear userId on logout
-    alert("Logged out"); 
+    localStorage.removeItem("token");
+    localStorage.removeItem("userId");
     setShowDropdown(false);
-    navigate("/"); // redirect to login page
+    navigate("/");
   };
 
   useEffect(() => {
+    const token = localStorage.getItem("token");
     const userId = localStorage.getItem("userId");
+<<<<<<< HEAD
     if (userId) {
       // fetch username from backend
       axios.get(`https://tailor-management-3.onrender.com/api/users/${userId}`)
         .then(res => setUsername(res.data.username))
         .catch(err => console.error("Error fetching user:", err));
+=======
+
+    if (!token || !userId) {
+      navigate("/");
+      return;
+>>>>>>> 748c428 (Implement JWT authentication and protect frontend/backend routes)
     }
+
+    axios.get(`http://localhost:5000/api/users/${userId}`, {
+      headers: {
+        Authorization: `Bearer ${token}`
+      }
+    })
+    .then(res => setUsername(res.data.username))
+    .catch(err => {
+      console.error("Auth error:", err);
+      logout();
+    });
+
   }, []);
 
   return (
@@ -54,9 +74,8 @@ const Home = () => {
           ORDERS
         </button>
         <button className="option" onClick={() => navigate('/EarningsPage')}>
-        EARNINGS
+          EARNINGS
         </button>
-
       </div>
     </div>
   );

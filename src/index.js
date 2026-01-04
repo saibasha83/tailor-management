@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from 'react-dom/client'
-import MainPageofTM from "./TailorManaGe/MainPageofTM";
-import UserForm from "./api-Integration";
+import MainPageofTM from "./frontend/MainPageofTM";
+
 function Main(){
     return (<MainPageofTM/>)
 }

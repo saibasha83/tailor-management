@@ -6,29 +6,45 @@ const Loginpage = () => {
   const navigate = useNavigate();
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  const [isSignup, setIsSignup] = useState(false); // ✅ toggle login/signup
+  const [isSignup, setIsSignup] = useState(false);
   const [error, setError] = useState("");
 
   const handleSubmit = async () => {
     try {
       if (isSignup) {
+<<<<<<< HEAD
         // ✅ Signup API
         await axios.post("https://tailor-management-3.onrender.com/api/users/signup", {
+=======
+        // SIGNUP
+        await axios.post("http://localhost:5000/api/users/signup", {
+>>>>>>> 748c428 (Implement JWT authentication and protect frontend/backend routes)
           username,
           password,
         });
+
         alert("Signup successful! Please login.");
         setIsSignup(false);
+        setUsername("");
+        setPassword("");
       } else {
+<<<<<<< HEAD
         // ✅ Login API
         const res = await axios.post("https://tailor-management-3.onrender.com/api/users/login", {
+=======
+        // LOGIN
+        const res = await axios.post("http://localhost:5000/api/users/login", {
+>>>>>>> 748c428 (Implement JWT authentication and protect frontend/backend routes)
           username,
           password,
         });
-        if (res.data.userId) {
-          localStorage.setItem("userId", res.data.userId); // store userId in localStorage
-          navigate("/home");
-        }
+
+        // ✅ STORE JWT + USER ID
+        localStorage.setItem("token", res.data.token);
+        localStorage.setItem("userId", res.data.userId);
+
+        setError("");
+        navigate("/home");
       }
     } catch (err) {
       setError(err.response?.data?.message || "Something went wrong");
@@ -50,6 +66,7 @@ const Loginpage = () => {
           type="text"
         />
       </div>
+
       <div className="mt-2">
         <input
           className="form-control"
@@ -60,7 +77,7 @@ const Loginpage = () => {
         />
       </div>
 
-      {error && <span style={{ color: "red" }}>{error}</span>}
+      {error && <div style={{ color: "red" }}>{error}</div>}
 
       <div className="mt-2">
         <button className="btn btn-primary w-100" onClick={handleSubmit}>
