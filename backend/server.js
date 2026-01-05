@@ -17,15 +17,15 @@ app.use(cors());
 
 // Test route
 app.get("/", (req, res) => {
-  res.send("Backend is running ✅");
+  res.send("Backend is running");
 });
 
 // Connect to MongoDB
 mongoose.connect(process.env.Mongo_url, {
   dbName: "TailorManage"
 })
-.then(() => console.log('✅ MongoDB connected'))
-.catch((err) => console.error('❌ MongoDB connection error:', err));
+.then(() => console.log(' MongoDB connected'))
+.catch((err) => console.error(' MongoDB connection error:', err));
 
 // Routes
 app.use('/api/garments', garmentRoutes);
@@ -34,9 +34,9 @@ app.use("/api/earnings", earningsRoute);
 
 // Start server
 app.listen(port, () => {
-  console.log(`🚀 Server running on port ${port}`);
+  console.log(` Server running on port ${port}`);
 <<<<<<< HEAD
-  console.log(`🌐 Accessible at https://tailor-management-3.onrender.com`);
+  console.log(` Accessible at https://tailor-management-3.onrender.com`);
 =======
  console.log("JWT_SECRET:", process.env.JWT_SECRET);
 
