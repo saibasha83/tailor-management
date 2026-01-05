@@ -8,7 +8,7 @@ const garmentSchema = new mongoose.Schema({
   createdAt: { type: Date, default: Date.now },
   cost:{type: Number,required:true},
   phoneNumber: { type: String, required: true },
-  userId: { type: mongoose.Schema.Types.ObjectId, ref: "User" }, // ✅ link to user
+  userId: { type: mongoose.Schema.Types.ObjectId, ref: "User" }, 
 });
 
 module.exports = mongoose.model("Garment", garmentSchema);
