@@ -13,7 +13,7 @@ const Loginpage = () => {
     try {
       if (isSignup) {
 <<<<<<< HEAD
-        // ✅ Signup API
+        
         await axios.post("https://tailor-management-3.onrender.com/api/users/signup", {
 =======
         // SIGNUP
@@ -29,7 +29,7 @@ const Loginpage = () => {
         setPassword("");
       } else {
 <<<<<<< HEAD
-        // ✅ Login API
+        // Login API
         const res = await axios.post("https://tailor-management-3.onrender.com/api/users/login", {
 =======
         // LOGIN
@@ -39,7 +39,7 @@ const Loginpage = () => {
           password,
         });
 
-        // ✅ STORE JWT + USER ID
+        // STORE JWT + USER ID
         localStorage.setItem("token", res.data.token);
         localStorage.setItem("userId", res.data.userId);
 
